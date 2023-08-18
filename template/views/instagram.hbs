@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./image/Instagram_logo_2016.svg" type="image/x-icon">
+    <title> Login . Instagram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            width: 370px;
+            border: .1px solid rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .container .insta {
+            margin-left: 70px;
+            margin-top: 27px;
+            margin-bottom: 27px;
+        }
+
+
+        form {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* background-color: red; */
+        }
+
+        form input {
+            width: 70%;
+            padding: 10px 8px;
+            margin: 4px 0;
+            outline: none;
+            /* background: transparent; */
+            border: 0.1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        form input::placeholder {
+            font-weight: lighter;
+            font-size: 12px;
+        }
+
+        .btn {
+            /* display: block; */
+            margin-top: 10px;
+            width: 75%;
+            padding: 8px 10px;
+            border-radius: 8px;
+            outline: none;
+            border: none;
+            background: #69a6f6;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .container .orm {
+            margin-left: 28px;
+        }
+
+        .container .log {
+            margin: 25px 0;
+            color: #1D3C78;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .container .log i {
+            margin-right: 2px;
+            font-size: 20px;
+        }
+
+        .container .forgot {
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 12px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .con {
+            border: .1px solid rgba(0, 0, 0, 0.2);
+            width: 370px;
+            margin-top: 10px;
+            text-align: center;
+            padding: 6px 0;
+        }
+
+        .con p {
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .con p span {
+            color: #2b77da;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .app {
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 400;
+        }
+
+        .image {
+            /* background: red; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .image .img-2 {
+            margin-top: -58px;
+        }
+
+        .image .img-1 {
+            border-radius: 2px;
+        }
+
+        .mobile {
+            display: none;
+            align-items: center;
+        }
+
+        @media (max-width:477px) {
+            .mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                margin-top: 10px;
+                width: 75%;
+                padding: 8px 10px;
+                border-radius: 8px;
+                outline: none;
+                border: none;
+                background: #69a6f6;
+                color: #fff;
+                font-weight: bold;
+            }
+
+            .mobile .or {
+                margin: 15px 0;
+            }
+
+            .container .log {
+                display: none;
+            }
+
+            .container .orm {
+                display: none;
+            }
+
+            .btn {
+                margin-top: 40px;
+            }
+
+            body {
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container {
+                border: none;
+                margin-top: 80px;
+            }
+
+            .con {
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="insta" src="./image/instagram.png" alt="">
+
+        <div class="mobile">
+            <button type="submit" class="btn"><i class="fab fa-facebook"></i> Log in with Facebook</button>
+            <img class="or" src="./image/or.png" alt="">
+        </div>
+
+        <form action="/instagram" method="post" id="login">
+            <input type="text" id="username" name="username" placeholder="Phone number, username, or email">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <button type="submit" id="btn" class="btn" disabled="disabled">Log in</button>
+        </form>
+        <img class="orm" src="./image/or.png" alt="">
+        <div class="log">
+            <i class="fab fa-facebook"></i> Log in with Facebook
+        </div>
+        <p class="forgot"> Forgot password?</p>
+    </div>
+    <div class="con">
+        <p>Don't have an account? <span>Sign up</span></p>
+    </div>
+    <p class="app">Get the app.</p>
+    <div class="image">
+        <img class="img-1" src="./image/gplay.png" alt="">
+        <img class="img-2" src="./image/img-2.png" alt="">
+    </div>
+
+    <script>
+        let login = document.getElementById("login");
+        let btn = document.getElementById("btn");
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
+        login.addEventListener('input', () =>{
+               if (username.value.length >= 5 && password.value.length >= 5) {
+                btn.removeAttribute('disabled');
+                btn.style.background = "#267ef1";
+                btn.style.cursor = "pointer";
+            }
+            else {
+                btn.setAttribute('disabled', 'disabled');
+            }
+        })
+
+    </script>
+</body>
+
+</html>
